@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+
+<%- include('./partials/head.ejs')  %> 
+    <title>Carrito de compras</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/cart.css" rel="stylesheet">
+    <link href="/css/userList.css" rel="stylesheet">
+</head>
+<!--BODY-->
+<body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')  %> 
+    <!--MAIN -->
+    <main>
+        <!-- LISTADO DE USUARIOS -->
+        <section class="lista-usuarios">
+            <h3 class="titulo-listado-usuarios">LISTADO DE USUARIOS</h3>
+            <ul>
+                <% usuarios.forEach(usuario => { %>
+                    <li class="detalle-lista-producto">
+                        <section class="imagen">
+                            <img src=<%=usuario.foto%> alt="">
+                        </section>
+                        <section class="detalle">
+                            <p class="precio"><%= usuario.usuario_id %> </p>
+                            <h4><%= usuario.nombre %> <%= usuario.apellido %> </h4>
+                            <p class="precio"><%= usuario.nombre_usuario %> </p>
+                            <p class="precio"><%= usuario.email %> </p>
+                            <p class="descuento"> <%= usuario.perfil.nombre%> </p>
+                        </section>
+                        <section class="editar">
+                            <a href="/user/editar/<%= usuario.usuario_id%>" >
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <form action="/user/eliminar/<%= usuario.usuario_id %>" method="POST" >
+                                <button class="boton-editar"><i class="fa-regular fa-trash-can"></i></button>
+                            </form>
+                        </section>
+                    </li>               
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %>

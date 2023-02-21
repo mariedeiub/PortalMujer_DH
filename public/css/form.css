@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap%27');
+:root {
+    --rosa_1: #fecec9;
+    --rosa_2: #EA859D;
+    --rosa_3: #E15172;
+    --rosa_4: #C02146;
+    --white: #FFFFFF;
+    --gray: #9e9ea7;
+}
+
+body  {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    position: fixed;
+    z-index: 99;
+}
+
+main {
+    margin-top: 13rem;
+}
+
+main.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+h1.login {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    height: 40px;
+    font-size: 30px;
+    justify-content: center;
+}
+
+h1.form-edit {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+::placeholder {
+    opacity: 0;
+}
+
+input.input-text:focus::placeholder {
+    opacity: 1;
+}
+
+form.form-register {
+    background: var(--gray);
+    padding: 40px 0;
+    box-shadow: 7px 13px 37px #000;
+    border-radius: 10px;
+    border-top: 4px solid var(--rosa_3);
+    margin-top: 40px;
+    padding: 20px 30px;
+    color: var(--white);
+}
+
+form#form-register {
+    margin: 20px 30px;
+    width: 80vw;
+}
+
+.div-form-register {
+    width: 100%;
+    margin: auto;
+}
+
+div#login1, div#login2 {
+    margin: 10px 0;
+    max-width: 217px;
+    justify-content: center;
+}
+
+form.form-register div.group-register {
+    position: relative;
+    margin: 45px;
+}
+
+input.input-text {
+    background: none;
+    color: #c6c6c6;
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--white);
+}
+
+input.input-text:focus {
+    outline: none;
+    color: var(--white);
+}
+
+.tipo-usuario {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 5px;
+    align-items: center;
+}
+
+.lbl-text-tipo{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.tipoUsuario{
+    max-width: 150px;
+}
+
+label.lbl-text {
+    font-size: 16px;
+    position: absolute;
+    color: var(--white);
+    left: 5px;
+    top: 10px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+    pointer-events: none;
+}
+
+input.input-text:focus~label.lbl-text,
+input.input-text:valid~label.lbl-text {
+    top: -14px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+span.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+span.barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: var(--rosa_1);
+    transition: ease 0.03s widht;
+    -webkit-transition: ease 0.03s widht;
+    -moz-transition: ease 0.03s widht;
+    -ms-transition: ease 0.03s widht;
+    -o-transition: ease 0.03s widht;
+    left: 0;
+}
+
+input.input-text:focus~span.barra::before{
+    width: 100%;
+}
+
+/*-------- EDITAR PRODUCTO: INPUT FOTO --------*/
+div#foto {
+    position: relative;
+    display: inline-block;
+}
+
+div#foto::before {
+    background-color: var(--rosa_3);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Cambiar imagen';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*-------- CREAR PRODUCTO: INPUT FOTO --------*/
+div#cargar-imagen {
+    position: relative;
+    display: inline-block;
+}
+
+div#cargar-imagen::before {
+    background-color: var(--rosa_3);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Cargar imagen';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.input-img {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+}
+
+/*-------- EDITAR PRODUCTO: INPUT DESCRIPCION --------*/
+div#descripcion {
+    /* margin: 0px 0px 15px 0; */
+    width: 100%;
+    margin: 0 0 15px 18px;
+}
+
+label.descripcion {
+    font-size: 14px;
+    color: var(--white);
+}
+
+textarea:focus::placeholder {
+    opacity: 1;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    width: 60vw;
+    background: none;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: var(--white);
+}
+
+textarea:focus {
+    border: 2px solid var(--rosa_1);
+}
+
+
+/*-------- BOTONES SUBMIT Y RESET --------*/
+
+button {
+    width: 70%;
+    height: 8vw;
+    max-height: 34px;
+    max-width: 200px;
+    background: var(--rosa_3);
+    border: none;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+button a {
+    text-decoration: none;
+}
+
+button a:visited {
+    text-decoration: none;
+    color: var(--white);
+}
+
+button.submitLogin {
+    margin: 20px 0 15px 15%;
+}
+
+/*-------- LOGIN Y REGISTER: ESTAS REG? --------*/
+p.login {
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: center;
+    max-width: 281px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+p.login a {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+p.login a:hover {
+    text-decoration: underline;
+}
+
+/*================================ MEDIA QUERIS =====================================*/
+/*============================== MEDIA TABLET =================================*/
+@media (min-width: 760px) {
+    .div-form-register {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 920px;
+    }
+
+    form.form-register {
+        margin: 2vh 4vw;
+        padding: 20px 0;
+    }
+
+    div#descripcion{
+        width: 475px;
+        max-width: 475px;
+    }
+
+    textarea {
+        max-width: 460px;
+    }
+
+    div.div-form-register{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding: 0 30px;
+    }
+    div.div-form-login {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    #login1 { grid-area: 1 / 1 / 2 / 2; }
+    #login2 { grid-area: 1 / 2 / 2 / 3; }
+    div.submitLogin { 
+        display: grid;
+        grid-area: 2 / 1 / 3 / 3;
+        justify-content: center;
+    }
+
+    div.submitRegistro {
+        display: grid;
+        grid-area: 6 / 1 / 7 / 3;
+        justify-content: center;
+    }
+
+}
+
+/*============================== MEDIA PC =================================*/
+@media (min-width: 769px) {
+    div.div-form-register{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+    
+        #div1 { grid-area: 1 / 1 / 2 / 2; }
+        #div2 { grid-area: 1 / 2 / 2 / 3; }
+        #div3 { grid-area: 1 / 3 / 2 / 4; }
+        #div4 { grid-area: 2 / 1 / 3 / 2; }
+        #div5 { grid-area: 2 / 2 / 3 / 3; }
+        #div6 { grid-area: 2 / 3 / 3 / 4; }
+        #div7 { grid-area: 3 / 1 / 4 / 2; }
+        #div8 { grid-area: 3 / 2 / 4 / 4;
+            max-width: 217px;
+        }
+        #div9 { grid-area: 4 / 1 / 5 / 2; }
+        #div10 { grid-area: 4 / 2 / 5 / 4; 
+            max-width: 217px;
+        }
+        div.submitRegistro { grid-area: 5 / 1 / 6 / 4; }
+}

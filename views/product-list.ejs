@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+<%- include('./partials/head.ejs')  %> 
+    <title>Productos</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/productsList.css" rel="stylesheet">
+</head>
+<body>
+     <!--HEADER-->
+     <%- include('./partials/header.ejs')  %> 
+     <div class="header-bot">
+        <i class="fas fa-truck"></i>
+        Envios gratis a todo el país en compras superiores a $30.000
+    </div>
+     <section class="banner">
+         <img src="/images/generales/Fashion-Banner.PNG" alt="">
+     </section>
+    <!-- MAIN -->
+    <main>
+        <!-- SECCION FILTROS PC-->
+        <form action="/productos/filtrar" class="filtros" method="GET">
+            <h3>FILTROS</h3>
+            <!-- MARCAS-->
+            <div class="tipo-filtro">
+                <p>MARCA </p>
+                <% marcas.forEach(element => { %>
+                    <div>
+                        <label for="marca"><%=element %> </label>
+                        <input type="checkbox" name="marca" value=<%=element %> >
+                    </div>
+                <% }) %>
+            </div>
+           
+            <!-- COLOR -->
+            <div class="tipo-filtro">
+                <p>COLOR </p>
+                <% colores.forEach(element => { %>
+                    <div>
+                        <label for="color"><%=element %> </label>
+                        <input type="checkbox" name="color" value=<%=element %> >
+                    </div>
+                <% }) %>
+            </div>
+            
+            <!-- TAMAÑO -->
+            <div class="tipo-filtro">
+                <p>TAMAÑO </p>
+                <% tamaños.forEach(element => { %>
+                    <div>
+                        <label for="tamanio"><%=element %> </label>
+                        <input type="checkbox" name="tamanio" value=<%=element %> >
+                    </div>
+                <% }) %>
+            </div>
+            
+            <!-- PRECIO -->
+            <div class="tipo-filtro">
+                <div>
+                    <p>PRECIO </p>
+                </div>
+                <div class="filtro-precio">
+                    <label for="precioMin" class="label-precio">MIN </label>
+                    <input type="text" name="precioMin" class="input-precio">
+                    <label for="precioMax" class="label-precio">MAX </label>
+                    <input type="text" name="tamañoMax" class="input-precio">
+                </div>
+            </div>
+
+            <button type="submit" class="boton-filtro">FILTRAR</button>
+            <button type="reset" class="boton-filtro">BORRAR FILTROS</button>
+        </form>
+        <section class="filtro-mobile">
+            <div>
+                <p>FILTRO <i class="fas fa-filter"></i></p>
+            </div>
+            <div>
+                <p>ORDENAR <i class="fa-solid fa-arrow-down-wide-short"></i></p>
+            </div>
+        </section>
+        <!-- SECCION LISTA DE PRODUCTOS -->
+        <section class="lista-productos">
+                <% listaProductos.forEach(producto => { %>
+                    <article class="tarjeta">
+                        <a href="/productos/producto/<%= producto.producto_id %>">
+                            <div class="img-tarjeta">
+                                <img src=<%=producto.imagen%>  alt="" class="img-product">
+                            </div>
+                        </a>
+                        <div class="envio">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="foot-article">
+                            <p class="precio">$ <%=producto.precio%> </p>
+                            <p class="descuento"><%= producto.descuento > 0 ?  producto.descuento + '%' : " " %></p>
+                        </div>
+                        <div>
+                            <h3 class="descripcion">
+                                <%=producto.nombre%> 
+                                <%=producto.marca %>
+                                <%=producto.tamanio %> 
+                                <%=producto.color %> 
+                            </h3>
+                        </div>
+                    </article>
+                <% }) %>       
+        </section>
+        
+    </main>
+    <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %> 

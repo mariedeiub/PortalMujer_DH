@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+<%- include('./partials/head.ejs')  %> 
+    <title>Producto</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/detail.css" rel="stylesheet">
+</head>
+<!--BODY-->
+<body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')  %> 
+    <div class="header-bot">
+        <i class="fas fa-truck"></i>
+        Envios gratis a todo el país en compras superiores a $30.000
+    </div>
+    <!--MAIN -->
+    <main>
+        <div class="imagen-descripcion">
+            <section class="imagen">
+                <div>
+                    <img src="<%= producto.imagen %> "  alt="imagen del producto">
+                </div>
+            </section>
+            <section class="descripcion">
+                <h3 class="nombre"><%= producto.nombre%> <%= producto.marca %> <%= producto.color %></h3>
+                <div class="precio-descuento">
+                    <p class="precio"> $ <%= producto.precio%> </p>
+                    <p class="descuento"><%= producto.descuento > 0 ?  producto.descuento + '% OFF' : " " %></p>
+                </div>
+                <p class="pagos">Formas de pago: </p>
+                <div class="formas-de-pago">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                </div>
+                <p class="envio"><i class="fas fa-truck"></i> Envio gratis en tus compras superiores a $ 30.000 </p>
+                <p class="cantidad">Cantidad: </p>
+                <div class="counter">
+                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                    <input type="text" value="1">
+                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                </div>
+                <div class="botones">
+                    <% if (locals.isLogged) { %>
+                        <div>
+                            <form action="/carrito/sumar/<%=producto.producto_id%>" method="POST" >
+                                <button type="submit"class="boton-personalizado" >Agregar carrito</button>
+                            </form>
+                        </div>
+                    <% } else { %>
+                        <div>
+                            <a href="/user/login/">
+                                <button class="boton-personalizado">Agregar carrito</button>
+                            </a>
+                        </div>
+                    <% } %>
+                    <% if (locals.isLogged && locals.userLogged.perfil_id == 1) { %>
+                        <div>
+                            <a href="/productos/editar/<%= producto.producto_id %>">
+                                <button class="boton-personalizado">Editar Producto</button>
+                            </a>
+                        </div>
+                        <div>
+                            <form action="/productos/delete/<%=producto.producto_id%>?_method=DELETE" method="POST" >
+                                <button type="submit"class="boton-personalizado" >Eliminar Producto</button>
+                            </form>
+                        </div>
+                    <% } %>
+                </div>
+            </section> 
+        </div>
+        <section class="detalle">
+            <div class="ficha">
+                <h3 class="titulo-descripcion">Informacion del producto</h3>
+                <div class="items">
+                    <h4>MEDIDAS: </h4> 
+                    <p><%= producto.tamanio %></p>
+                </div>
+                <div class="items">
+                    <h4>COLOR: </h4> 
+                    <p><%= producto.color %></p>
+                </div>
+                <div class="items">
+                    <h4>MARCA: </h4> 
+                    <p><%= producto.marca %></p>
+                </div>
+                <div class="items">
+                    <h4>FABRICANTE: </h4> 
+                    <p><%= producto.fabricante %></p>
+                </div>
+                <div class="items">
+                    <h4>MODELO: </h4> 
+                    <p><%= producto.modelo %></p>
+                </div>
+            </div>
+            <div class="descripcion-producto">
+                <h3 class="titulo-descripcion">Descripcion </h3>
+                <div><%= producto.descripcion %></div>
+            </div>
+        </section>   
+    </main>
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %>

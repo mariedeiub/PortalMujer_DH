@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "direccion": "Calle Falsa 123",
+        "localidad": "CABA",
+        "edad": 23,
+        "email": "aohola@gmail.com",
+        "nombreUsuario": "holita",
+        "contraseña": "snoethuojk",
+        "categoria": "cliente",
+        "fotoPerfil": "link"
+    },
+    {
+        "id": 2,
+        "nombreUsuario": "Lauphite",
+        "nombre": "Lautaro",
+        "apellido": "Diego",
+        "email": "lautydie@gmail.com",
+        "contraseña": "contraseña123",
+        "edad": 19,
+        "categoria": "admin",
+        "fotoPerfil": "link"
+    },
+    {
+        "id": 3,
+        "nombre": "Marianela",
+        "apellido": "Deiub",
+        "direccion": "Bolivia 121",
+        "localidad": "JUNIN",
+        "edad": "29",
+        "email": "mariedeiub@gmail.com",
+        "nombreUsuario": "Marianela",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2b$10$TvNxQR2XQ3fiQf0lSJkK7.XAB6ZmgD0O5iyqbT.owJ4nHhudIcRLC"
+    },
+    {
+        "id": 4,
+        "nombre": "Robert",
+        "apellido": "Ruiz",
+        "direccion": "Eduardo Madero 1800",
+        "localidad": "CABA",
+        "edad": "28",
+        "email": "robert@hotmail.com",
+        "nombreUsuario": "Robert123",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2b$10$jqo.XOVGMsaFesJfv74oIOkcOAnYErEH1hpATudhpYbK7bspEllCq"
+    },
+    {
+        "id": 4,
+        "nombre": "Robert",
+        "apellido": "Ruiz",
+        "direccion": "Eduardo Madero 1800",
+        "localidad": "CABA",
+        "edad": "28",
+        "email": "bert@hotmail.com",
+        "nombreUsuario": "Robert123",
+        "tipoUsuario": "administrador",
+        "contrasenia": "223"
+    },
+    {
+        "id": 5,
+        "nombre": "asasADadasd",
+        "apellido": "asdasdasdasd",
+        "direccion": "asdasdasdas",
+        "localidad": "asasas",
+        "edad": "33",
+        "email": "asda@gmail.com",
+        "nombreUsuario": "asasas12345",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2b$10$bo23.BQLqslra1PLMDOQP.cII/HzupbR1mYcPg14me/p/3lyKGbbq"
+    },
+    {
+        "id": 6,
+        "nombre": "zxzxzxzx",
+        "apellido": "zxzxzxzx",
+        "direccion": "zxzxzxzxzx",
+        "localidad": "zxzxzxzx",
+        "edad": "33",
+        "email": "asdasasasasa@gmail.com",
+        "nombreUsuario": "asasasasas",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2a$10$fPc472f3EvtlVjWlumy3q.qC29jIUmqLxDulNWwNmAq3lO84pi4H."
+    },
+    {
+        "id": 7,
+        "nombre": "asdasd1212121",
+        "apellido": "1212121212",
+        "direccion": "1212121212",
+        "localidad": "12121212121",
+        "edad": "12",
+        "email": "beto@gmail.com",
+        "nombreUsuario": "beto123233",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2b$10$XHw1YCf6egxU9rVlxOQf/Ogm2mrzkzzbtjbO6uOWejR4.KhkVGSZK"
+    },
+    {
+        "id": 8,
+        "nombre": "asdasd",
+        "apellido": "asdasd",
+        "direccion": "asdasd",
+        "localidad": "asdasd",
+        "edad": "33",
+        "email": "asda@gmail.com",
+        "nombreUsuario": "asdasdasda",
+        "tipoUsuario": "administrador",
+        "contrasenia": "$2b$10$Z0wjOBYYGE3E0iKIKPsT7ej/yGU1znFnFuXkOn68FcF5oqxUi/FhK"
+    }
+]

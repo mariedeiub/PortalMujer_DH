@@ -1,0 +1,36 @@
+{
+  "name": "grupo_13_ferreteria",
+  "version": "1.0.0",
+  "description": "Nos inspiramos en paginas como Sodimac, Easy, Mercado Libre, Amazon, entre otras y familiares y conocidos de los integrantes del grupo, todo esto con el fin de crear un ecommerce de una ferreteria. Nos parecio una buena idea ya que teniamos experiencia en el area de las herramientas y articulos del hogar\r les dejamos el link de figma donde hicimos los wireframes de desktop, mobile y tablet.\r https://www.figma.com/team_invite/redeem/5MkZvjuVW3wrs5vtWTTnVt.\r Nuestro Ecommerce \"El Cosito\" esta destinado a ventas al por mayor o menor de objetos de ferreteria.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariedeiub/grupo_13_ferreteria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariedeiub/grupo_13_ferreteria/issues"
+  },
+  "homepage": "https://github.com/mariedeiub/grupo_13_ferreteria#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "fs": "^0.0.1-security",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.0.1",
+    "nodemon": "^2.0.20",
+    "proptypes": "^1.1.0",
+    "sequelize": "^6.28.0"
+  }
+}

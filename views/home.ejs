@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+<%- include('./partials/head.ejs')  %> 
+    <title>Home</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')  %> 
+    <div class="header-bot">
+        <i class="fas fa-truck"></i>
+        Envios gratis a todo el país en compras superiores a $30.000
+    </div>
+    <section class="banner">
+        <img src="/images/generales/Fashion-Banner.PNG" alt="">
+    </section>
+    <!-- MAIN -->
+    <main>
+        <h2>LAS MEJORES OFERTAS PARA VOS</h2>
+        <section class="ofertas">
+            <div class="ofertas-parte1">
+                <article class="tarjeta">
+                    <a href="/productos/Accesorios">
+                        <img src="/images/generales/Accesorios.png" alt="" class="img-oferta">
+                    </a>
+                </article>
+                <article class="tarjeta">
+                    <a href="/productos/Cosmeticos">
+                        <img src="/images/generales/cosmeticos-lateral.png" alt="" class="img-oferta">
+                    </a>
+                </article>
+            </div>
+            <article class="tarjeta-vertical">
+                <a href="/productos/Lenceria">
+                    <video src="/images/generales/promo-principal.mp4" autoplay="true" muted="true" loop="true" class="img-oferta-vertical"></video>
+                </a>
+            </article>
+            <div class="ofertas-parte2">
+                <article class="tarjeta">
+                    <a href="/productos/Indumentaria">
+                        <img src="/images/generales/indumentaria.png" alt="" class="img-oferta">
+                    </a>
+                </article>
+                <article class="tarjeta">
+                    <a href="/productos/Cuidado Personal">
+                        <img src="/images/generales/Cuidado-personal.png" alt="" class="img-oferta">
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %> 

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap%27');
+:root {
+    --rosa_1: #fecec9;
+    --rosa_2: #EA859D;
+    --rosa_3: #E15172;
+    --rosa_4: #C02146;
+    --white: #FFFFFF;
+    --gray: #9e9ea7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.lista-usuarios{
+    margin-top: 200px;
+    background-color: white;
+}
+
+.lista-usuarios ul li{
+    border: solid 10px var(--gray);
+    margin-bottom: 10px;
+}
+
+.titulo-listado-usuarios{
+    text-align: center;
+    border-bottom: 3px solid var(--gray);
+    margin-bottom: 30px;
+}
+
+.editar{
+    justify-content: space-around;
+}

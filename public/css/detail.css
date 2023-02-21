@@ -1,0 +1,213 @@
+:root {
+    --rosa_1: #fecec9;
+    --rosa_2: #EA859D;
+    --rosa_3: #E15172;
+    --rosa_4: #C02146;
+    --white: #FFFFFF;
+    --gray: #9e9ea7;
+    --green: #39b54a;
+}
+
+/*============================== IMAGEN PRODUCTO =================================*/
+main{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen-descripcion{
+    width: 90%;
+    margin-top: 15px;
+}
+
+.imagen{
+    width: 100%;
+    border: 3px solid var(--gray);
+    border-radius: 15px;
+
+}
+
+img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/*------------------- DETALLE PRODUCTO ------------------------*/
+.descripcion{
+    width: 100%;
+    height: 500px;
+    border: 3px solid var(--gray);
+    margin: 15px 0;
+    border-radius: 15px;
+    padding: 10px;
+
+}
+
+.precio-descuento{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.precio{
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.descuento{
+    margin: 20px 0 0 20px;
+    font-size: 20px;
+    color: var(--green);
+}
+
+.envio{
+    margin-top: 25px;
+    font-size: 18px;
+    color: var(--green);
+}
+
+.pagos{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.formas-de-pago i{
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+/*========= CONTADOR ==========*/
+.cantidad{
+    margin-top: 20px;
+}
+
+.counter {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px var(--gray);
+    border-radius: 7px;
+    margin-top: 5px;
+}
+.counter input {
+    width: 30px;
+    border: 0;
+    border-left: solid 2px var(--gray);
+    border-right: solid 2px var(--gray);
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    background: var(--white);
+    appearance: none;
+    outline: 0;
+    font-weight: bolder;
+}
+.counter span {
+    display: block;
+    font-size: 15px;
+    padding: 0 10px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bolder;
+}
+
+.boton-personalizado{
+    height: 40px;
+    background-color: var(--rosa_3);
+    color: var(--white);
+    border: solid 2px var(--rosa_4);
+    border-radius: 5px;
+    padding: 0.1rem 3rem;
+    font-size: 1rem;
+    margin: 7px 0;
+    width: 270px;
+} 
+
+.botones{
+    display: flex;
+    height: 180px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/*----------------------- DESCRIPCION ------------------------*/
+.detalle{
+    width: 90%;
+    border: 3px solid var(--gray);
+    margin: 15px 0;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.titulo-descripcion{
+    text-align: center;
+    border-bottom: solid 2px var(--gray);
+    margin-top: 15px;
+}
+.ficha{
+    padding: 10px;
+    border-bottom: 3px solid var(--gray);
+}
+.ficha h4{
+    margin: 10px ;
+    font-weight: bolder;
+}
+
+.descripcion-producto{
+    margin: 15px 15px;
+}
+
+.descripcion-producto h3{
+    margin-bottom: 15px;
+}
+
+.items{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+/*--------------------------MEDIA PC -------------------------*/
+@media (min-width: 1024PX) {
+    main{
+        max-width: 80%;
+    }
+    .imagen-descripcion{
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagen{
+        max-height: 500px;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        max-width: 450px;
+    }
+
+    .descripcion{
+        max-height: 600px;
+        margin: 20px;
+    }
+
+    .detalle{
+        display: flex;
+    }
+
+    .ficha{
+        border-bottom: 0;
+        border-right: 3px solid var(--gray);
+        width: 50%;
+    }
+    .descripcion-producto{
+        width: 50%;
+    }
+}

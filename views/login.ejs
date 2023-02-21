@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+<%- include('./partials/head.ejs')  %> 
+    <title>Iniciar sesión</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <script src="/js/loginScript.js"></script>
+</head>
+<!--BODY-->
+<body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')  %> 
+    <!--MAIN -->
+    <main class="register">
+        <section class="errores">
+            <% if (locals.errors) { %>
+                <% errors.forEach(error => { %>
+                    <p><%= error.msg %> </p> 
+                <% }) %>
+            <% } %>
+        </section>
+        <form action="/user/login" method="POST" class="form-register" id="form-register">
+            <h1 class="login">INICIAR SESION</h1>
+            <div class="div-form-login">
+                <!-- USUARIO -->
+                <div class="group-register" id="login1">
+                        <input required type="text" class="input-text" id="usuario"  name ="email" value="<%= locals.old && old.email %>"><span class="barra"></span>
+                        <label for="usuario" class="lbl-text">Correo electronico</label>
+                       
+                </div>
+
+                <!-- CONTRASENA -->
+                <div class="group-register" id="login2">
+                        <input required type="password" class="input-text" id="contraseña" name="contraseña" value="<%= locals.old && old.contraseña %>"><span class="barra"></span>
+                        <label for="contraseña" class="lbl-text">Contraseña</label>
+                </div>
+
+                <button type="submit" class="corrido">Iniciar Sesion</button>
+                <p class="login"><a href="/user/registro">¿No estas registrado? Crea tu cuenta acá!</a></p>
+                </div>
+            </div>
+                <div >
+                    <label >
+                        <input type="checkbox"  name="remember_user">Recordar mi usuario
+                    </label>
+                </div>
+        </form> 
+    </main>
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %> 

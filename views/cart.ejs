@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
+
+<%- include('./partials/head.ejs')  %> 
+    <title>Carrito de compras</title>
+    <!--HOJA DE ESTILO-->
+    <link href="/css/styles.css" rel="stylesheet">`
+    <link href="/css/cart.css" rel="stylesheet">`
+</head>
+<!--BODY-->
+<body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')  %> 
+    <!--MAIN -->
+    <div class="header-bot">
+        <i class="fas fa-truck"></i>
+        Envios gratis a todo el país en compras superiores a $30.000
+    </div>
+    <main>
+        <!-- LISTADO DE PRODUCTOS -->
+        <section class="lista-productos">
+            <ul>
+                <% pedido.forEach(producto => { %>
+                    <li class="detalle-lista-producto">
+                        <section class="imagen">
+                            <a href="/productos/producto/<%= producto.producto_id %>" ><img src=<%=producto.producto.imagen%> alt=""></a>
+                        </section>
+                        <section class="detalle">
+                            <h4><%= producto.producto.nombre %> <%= producto.producto.marca %>  <%= producto.producto.tamanio %> <%= producto.producto.color %> </h4>
+                            <p class="precio">$<%= producto.precio %> </p>
+                            <p class="descuento"><%= producto.producto.descuento > " " ? producto.producto.descuento + '%' : " " %> </p>
+                            <!--CONTADOR-->
+                            <div class="counter">
+                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                <input type="text" value="1">
+                                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                            </div>
+                        </section>
+                        <section class="editar">
+                            <a href="/productos/producto/<%= producto.producto_id %>" >
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <form action="/carrito/eliminar/<%= producto.producto_id %>" method="POST" >
+                                <button class="boton-editar"><i class="fa-regular fa-trash-can"></i></button>
+                            </form>
+                            <h4>$<%= producto.precio-(producto.precio * producto.producto.descuento /100)  %> </h4>
+                        </section>
+                    </li>               
+                <% }) %>
+            </ul>
+        </section>
+        <!-- DETALLE COMPRA -->
+        <div class="detalle-compra">
+            <!-- CODIGO PROMO -->
+            <section class="detalle-promo">
+                    <label for="codigo"><h4>Codigo Promo: </h4></label>
+                    <input type="text" class="codigo">
+                    <button class="boton-personalizado">OK</button>
+            </section>
+            <!--DETALLE TOTAL DEL ENVIO -->
+            <section class="detalle-envio">
+                    <label for="codigo"><h4>Codigo Postal: </h4></label>
+                    <input type="text" class="codigo-postal">
+                    <button class="boton-personalizado">Calcular</button>
+            </section>
+            <!--DETALLE TOTAL DE LA COMPRA-->
+            <section class="total-compra">
+                    <h3>Resumen de compra</h3>
+                    <div class="subtotal">
+                        <p>Subtotal productos: </p>
+                        <p> $ <%= subtotal %></p>
+                    </div>
+                    <p>Costo de envio: </p>
+                    <div>
+                        <P>Descuento codigo promo: </P>
+                    </div>
+                    <div class="total">
+                        <h4>TOTAL: </h4>
+                        <h4> $ <%= total %> </h4>
+                    </div>
+                    <button class="boton-personalizado">Continuar comprando</button>
+                    <button class="boton-personalizado">Confirmar compra</button>
+            </section>
+        </div>
+    </main>
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %>

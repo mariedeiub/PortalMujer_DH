@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<!---HEAD---> 
+<%- include('./partials/head.ejs')  %> 
+    <title>Crear Producto</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/product-edit-form.css" rel="stylesheet">
+    <script src="/js/productScript.js"></script>
+</head>
+<body>
+    <%- include('./partials/header.ejs')  %> 
+    <!--MAIN-->
+    <main class="register">
+        <!--MENSAJE DE ERROR EN CASO QUE FALTE COMPLETAR UN CAMPO-->
+        <section class="errores">
+            <% if (locals.errors) { %>
+                <% errors.forEach(error => { %>
+                    <p><%= error.msg %> </p> 
+                <% }) %>
+            <% } %>
+        </section>       
+        <!--FORMULARIO DE EDICION DE PRODUCTO-->
+        <form action="/productos/crear/" method="POST" class="form-register" id="form-edit" enctype="multipart/form-data">
+            <h1 class="form-edit">Crear nuevo producto </h1>
+            <div class="div-form-register">
+                <!--NOMBRE DEL PRODUCTO-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="nombre" name="nombre" value="<%= locals.old && old.nombre %>"><span class="barra"></span>
+                    <label for="nombre" class="lbl-text">Nombre del producto</label>
+                </div>
+                <!--MARCA-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="marca" name="marca" value="<%= locals.old && old.marca %>"><span class="barra"></span>
+                    <label for="marca" class="lbl-text">Marca</label>
+                </div>
+                <!--TAMAÑO-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="tamaño" name="tamanio" value="<%= locals.old && old.tamanio %>"><span class="barra"></span>
+                    <label for="tamaño" class="lbl-text">Tamaño</label>
+                </div>
+                <!--COLOR-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="color" name="color" value="<%= locals.old && old.color %>"><span class="barra"></span>
+                    <label for="color" class="lbl-text">Color</label>
+                </div>
+                <!--PRECIO-->
+                <div class="group-register">
+                    <input type="number" class="input-text" id="precio" name="precio" value="<%= locals.old && old.precio %>"><span class="barra"></span>
+                    <label for="precio" class="lbl-text">Precio</label>
+                </div>
+                <!--FABRICANTE-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="fabricante" name="fabricante" value="<%= locals.old && old.fabricante %>"><span class="barra"></span>
+                    <label for="fabricante" class="lbl-text">Fabricante</label>
+                </div>
+                <!--DESCUENTO-->
+                <div class="group-register">
+                    <input type="number" class="input-text" id="descuento" name="descuento" value="<%= locals.old && old.descuento %>"><span class="barra"></span>
+                    <label for="descuento" class="lbl-text">Descuento</label>
+                </div>
+                <!--MODELO-->
+                <div class="group-register">
+                    <input type="text" class="input-text" id="modelo" name="modelo" value="<%= locals.old && old.modelo %>"><span class="barra"></span>
+                    <label for="modelo" class="lbl-text">Modelo</label>
+                </div>
+                <!--STOCK-->
+                <div class="group-register">
+                    <input type="number" class="input-text" id="stock" name="stock" value="<%= locals.old && old.stock %>"><span class="barra"></span>
+                    <label for="stock" class="lbl-text">Stock</label>
+                </div>
+                <!--CATEGORIA-->
+                <section class="categorias"> Categorias:
+                    <% categorias.forEach(categoria => { %>
+                        <div class="categoria">
+                            <label for="categoria"><%=categoria.nombre %> </label>
+                            <input type="checkbox" name="categoria" id="categoria" value=<%=categoria.categoria_id %> >
+                        </div>
+                    <% }) %>                     
+                </section>
+                <!--FOTO-->
+                <div class="group-register" id="cargar-imagen">
+                    <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
+                </div>
+                <!--DESCRIPCION-->
+                <div class="group-register" id="descripcion">
+                    <label for="descripcion" class="descripcion">Descripción</label><br>
+                    <textarea class="descripcion" name="descripcion" id="descripcionID" cols="30" rows="6" value="<%= locals.old && old.descripcion %>"></textarea>
+                </div>
+                <!--SUBMIT / RESET-->
+                <button type="submit">Crear</button>
+                <button type="reset">Restablecer</button>
+            </div>
+        </form>
+    </main>
+<%- include('./partials/footer.ejs')  %>  

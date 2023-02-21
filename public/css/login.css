@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap%27');
+:root {
+    --rosa_1: #fecec9;
+    --rosa_2: #EA859D;
+    --rosa_3: #E15172;
+    --rosa_4: #C02146;
+    --white: #FFFFFF;
+    --gray: #9e9ea7;
+}
+
+body  {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    position: fixed;
+    z-index: 99;
+}
+
+main.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
+    width: auto;
+    
+}
+
+h1.login {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    height: 40px;
+    font-size: 30px;
+    justify-content: center;
+}
+
+h1.form-edit {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+::placeholder {
+    opacity: 0;
+}
+
+input.input-text:focus::placeholder {
+    opacity: 1;
+}
+
+form.form-register {
+    background: var(--gray);
+    box-shadow: 7px 13px 37px #000;
+    border-radius: 10px;
+    border-top: 4px solid var(--rosa_4);
+    padding: 20px 30px;
+    color: var(--white);
+}
+
+.div-form-register {
+    width: 100%;
+    margin: 64px -1022px 80px -412px;
+}
+
+form.form-register div.group-register {
+    position: relative;
+    margin: 24px;
+}
+
+
+
+input.input-text {
+    background: none;
+    color: #c6c6c6;
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--white);
+}
+
+input.input-text:focus {
+    outline: none;
+    color: var(--white);
+}
+
+label.lbl-text {
+    font-size: 16px;
+    position: absolute;
+    color: var(--white);
+    left: 5px;
+    top: 10px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+    pointer-events: none;
+}
+
+input.input-text:focus~label.lbl-text,
+input.input-text:valid~label.lbl-text {
+    top: -14px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+span.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+span.barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: var(--rosa_1);
+    transition: ease 0.03s widht;
+    -webkit-transition: ease 0.03s widht;
+    -moz-transition: ease 0.03s widht;
+    -ms-transition: ease 0.03s widht;
+    -o-transition: ease 0.03s widht;
+    left: 0;
+}
+
+input.input-text:focus~span.barra::before{
+    width: 100%;
+}
+
+/*-------- EDITAR PRODUCTO: INPUT FOTO --------*/
+div#foto {
+    position: relative;
+    display: inline-block;
+}
+
+div#foto::before {
+    background-color: var(--rosa_4);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Cambiar imagen';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*-------- CREAR PRODUCTO: INPUT FOTO --------*/
+div#cargar-imagen {
+    position: relative;
+    display: inline-block;
+}
+
+div#cargar-imagen::before {
+    background-color: var(--rosa_4);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Cargar imagen';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.input-img {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+}
+
+/*-------- EDITAR PRODUCTO: INPUT DESCRIPCION --------*/
+div#descripcion {
+    /* margin: 0px 0px 15px 0; */
+    width: 100%;
+    margin: 0 0 15px 18px;
+}
+
+label.descripcion {
+    font-size: 14px;
+    color: var(--white);
+}
+
+textarea:focus::placeholder {
+    opacity: 1;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    width: 60vw;
+    background: none;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: var(--white);
+}
+
+textarea:focus {
+    border: 2px solid var(--rosa_1);
+}
+
+
+/*-------- BOTONES SUBMIT Y RESET --------*/
+
+button {
+    width: 70%;
+    height: 8vw;
+    max-height: 34px;
+    max-width: 200px;
+    background: var(--rosa_4);
+    border: none;
+    color: var(--white);
+    display: block;
+    margin: 0 0 15px 30%;
+    font-size: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+button a {
+    text-decoration: none;
+}
+
+button a:visited {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/*-------- LOGIN Y REGISTER: ESTAS REG? --------*/
+p.login {
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+    text-decoration: none;
+}
+
+p.login a {
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    margin:auto;
+}
+
+p.login a:hover {
+    text-decoration: underline;
+}
+
+/*================================ MEDIA QUERIS =====================================*/
+/*============================== MEDIA TABLET =================================*/
+@media (min-width: 760px) {
+    .div-form-register {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 920px;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    form.form-register {
+        margin: 2vh 4vw;
+    }
+
+    div#descripcion{
+        width: 475px;
+        max-width: 475px;
+    }
+
+    textarea {
+        max-width: 460px;
+    }
+
+    button {
+        margin: 40px 0px 47px 0px
+    }
+    .corrido{
+
+        margin:7% auto;
+    }
+}

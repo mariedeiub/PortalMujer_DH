@@ -1,0 +1,14 @@
+.error404{
+    margin: 125px 10px 30px 10px;
+}
+
+/*--------------------------MEDIA PC -------------------------*/
+@media (min-width: 1024PX) {
+    main{
+        max-width: 80%;
+    }
+
+    .error404{
+        margin-top: 200px;
+    }
+}

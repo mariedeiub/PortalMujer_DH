@@ -1,0 +1,100 @@
+<!--SUSCRIPCION-->
+<section class="suscripcion">
+    <P>SUSCRIBITE : </P>
+    <section class="suscription-group">
+        <input placeholder="Ingresa tu email" type="search" class="mail">
+        <i class="far fa-paper-plane"></i>
+    </section>
+</section>
+<!--FOOTER-->
+<footer>
+    <!-- FOOTER MOBILE -->
+    <div class="footer-mobile">
+        <section>
+                <p>NOSOTROS</p>
+                <P>+</P>
+        </section>
+        <section>
+            <p>SERVICIO</p>
+            <P>+</P>
+        </section>
+        <section>
+            <p>CUENTA</p>
+            <P>+</P>
+        </section>
+        <section>
+            <p>REDES SOCIALES</p>
+            <P>+</P>
+        </section>
+    </div>
+    <!-- FOOTER PC -->
+    <div class="pc">
+        <section class="footer-pc">
+            <h3>NOSOTROS</h3>
+            <ul>
+                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/sucursales">Nuestras sucursales</a></li>
+                <li><a href="/preguntas">Preguntas frecuentes</a></li>
+                <li><a href="/terminos">Terminos y condiciones</a></li>
+                <li><a href="/trabajo">Trabaja con nosotros</a></li>
+                <% if (locals.isLogged && locals.userLogged.perfil_id == 1) { %>
+                    <li><a href="/user/lista">Ver lista de usuarios</a></li>
+                <% } %>
+            </ul>
+        </section>
+        <section class="footer-pc">
+            <h3>SERVICIO</h3>
+            <ul>
+                <li><a href="/trabajo">Servicios e instalaciones</a></li>
+                <li><a href="/precios">Garantia de precios</a></li>
+                <li><a href="/devolucion">Garantia de devolucion</a></li>
+                <li><a href="/pago">Medios de pago</a></li>
+                <li><a href="/promociones">Promociones</a></li>
+                <% if (locals.isLogged && locals.userLogged.perfil_id == 1) { %>
+                    <li><a href="/productos/cargar">Agregar nuevo producto</a></li>
+                <% } %>
+            </ul>
+        </section>
+        <section class="footer-pc">
+            <h3>CLIENTE</h3>
+            <ul>
+                <li><a href="/user/registro">Registrate ahora</a></li>
+                <li><a href="/recuperarClave">Recuperar clave</a></li>
+                <li><a href="/user/perfil">Detalle cliente</a></li>
+                <li><a href="/seguimiento">Seguimiento de orden</a></li>
+                <li><a href="/opinion">Dejanos tu opinion</a></li>
+                <li><a href="/defensa">Defensa del consumidor</a></li>
+            </ul>
+        </section>
+        <section class="footer-pc">
+            <h3>REDES SOCIALES</h3>
+            <ul>
+                <li>
+                    <i class="fab fa-facebook-square"></i>
+                    <a href="https://es-la.facebook.com/">Facebook</a>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/">Instagram</a>
+                </li>
+                <li>
+                    <i class="fab fa-twitter-square"></i>
+                    <a href="https://twitter.com/">Twitter</a>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com">Linkedin</a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://web.whatsapp.com/">Whatsapp</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</footer>
+<div class="copyright">
+    <p>Copyright © 2022 Portal Mujer / Seguridad y Privacidad | Código de ética</p>
+</div>
+</body>
+</html>

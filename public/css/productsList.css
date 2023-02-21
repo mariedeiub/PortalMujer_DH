@@ -1,0 +1,208 @@
+:root {
+    --rosa_1: #fecec9;
+    --rosa_2: #EA859D;
+    --rosa_3: #E15172;
+    --rosa_4: #C02146;
+    --white: #FFFFFF;
+    --gray: #9e9ea7;
+    --green: #39b54a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*===================== MAIN ========================*/
+main {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
+/*===================== PRODUCTOS ========================*/
+.lista-productos{
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*-----------------------TARJETAS PRODUCTOS ----------------------*/
+.tarjeta{
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    margin: 10px;
+    display: block;
+    position: relative;
+    border: solid 5px var(--gray);
+}
+
+.img-tarjeta{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-product{
+    width: 95%;
+    height: 95%;
+}
+
+.foot-article{
+    border-top: solid 1px var(--gray)
+}
+
+/*---------ICONO ENVIO --------------------------*/
+.envio i{
+    color: var(--green);
+    padding: 3px;
+    border: solid var(--green) 1px;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 143px;
+}
+
+
+.lista-productos article:hover i{
+    transform: rotate(-90deg);
+}
+
+/*------------------- PRECIOS ------------------ */
+.precio {
+    font-size: 22px;
+    font-weight:bolder;
+    margin: 10px;
+
+}
+
+/*------------------- DESCUENTOS --------------- */
+.descuento {
+    font-size: 22px;
+    color: var(--green);
+    height: 30px;
+    margin: 0;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/*------------------- DESCRIPCION --------------- */
+
+.descripcion{
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 0;
+}
+
+/*------------------- SEPARADOR --------------- */
+.separador {
+    height: 10px;
+}
+
+/*=================== MEDIA TABLET ========================*/
+@media (max-width:768px){
+    .filtros{
+        display: none;
+    }
+
+    .filtro-mobile{
+        width: 80%;
+        height: 50px;
+        color: var(--gray);
+        border: solid 2px var(--gray);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .descripcion {
+        font-size: 20px;
+        padding: 5px;
+    }
+}
+/*=================== MEDIA TABLET ========================*/
+@media (min-width:768px){
+/*===================== FILTRO ========================*/
+.filtro-mobile{
+    display: none;
+}
+.filtros{
+    width: 30%;
+    margin: 10px;
+    background-color: var(--gray);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.filtros h3{
+    color: var(--white);
+    text-align: center;
+    border-bottom: solid 5px var(--white);
+    margin: 20px;
+}
+
+.tipo-filtro{
+    width: 90%;
+    background-color: var(--gray);
+    margin: 0 5px;
+    border: solid 5px var(--white);
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 7px 0;
+    align-items: center;
+}
+
+
+.tipo-filtro p{
+    margin: 10px;
+    border-bottom: solid 3px var(--white);
+}
+
+.filtro-precio{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px;
+}
+
+.label-precio{
+    font-size: 18px;
+}
+
+.input-precio{
+    width: 25%;
+    font-size: 18px;
+}
+
+.boton-filtro{
+    width: 60%;
+    padding: 10px;
+    background-color: var(--rosa_3);
+    color: var(--white);
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+}
