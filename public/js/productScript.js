@@ -81,7 +81,6 @@ window.addEventListener('load', function() {
                 ulErrors.innerHTML += `<li >  ${errors[i]} </li>`;
             };
         }else{
-            alert('Bienvenido de nuevo!!!')
             form.submit();
         }
     });

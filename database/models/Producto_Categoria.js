@@ -27,5 +27,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const ProductoCategoria = sequelize.define(alias,cols,config);
 
+    ProductoCategoria.associate = function(models){
+        ProductoCategoria.belongsTo(models.Categorias, {
+            foreignKey: 'categoria_fk',
+            as: 'categorias'
+        })
+        ProductoCategoria.belongsTo(models.Productos, {
+            foreignKey: 'producto_fk',
+            as: 'productos'
+        })
+    }
+
     return ProductoCategoria;
 }

@@ -59,7 +59,7 @@ const mainController = {
     eliminarCarrito: (req,res) => {
         db.Carritos.destroy({
             where: {
-                producto_id: req.params.id,
+                producto_fk: req.params.id,
                 usuario_id: req.session.userLogged.usuario_id
             }
           })
@@ -72,7 +72,7 @@ const mainController = {
         .then(producto =>{
             if(producto.stock > 0){
                 let nuevoCarrito = {
-                    producto_id: producto.producto_id,
+                    producto_fk: producto.producto_id,
                     usuario_id: req.session.userLogged.usuario_id,
                     precio: producto.precio,
                     cantidad: 1
@@ -86,6 +86,6 @@ const mainController = {
         
     },
 
-}
+} 
 
 module.exports = mainController

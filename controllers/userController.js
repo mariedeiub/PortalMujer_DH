@@ -76,7 +76,7 @@ const usersController = {
             if(req.body.remember_user) {
               res.cookie('usuario', req.body.email, { maxAge: (1000 * 60) * 60 })
             }
-            res.render('home',{user})
+            res.redirect('/')
           } 
           })
           .catch (err=>{

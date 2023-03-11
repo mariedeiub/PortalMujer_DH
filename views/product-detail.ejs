@@ -48,7 +48,7 @@
                     <% if (locals.isLogged) { %>
                         <div>
                             <form action="/carrito/sumar/<%=producto.producto_id%>" method="POST" >
-                                <button type="submit"class="boton-personalizado" >Agregar carrito</button>
+                                <button type="submit"class="boton-personalizado" id="agregar">Agregar carrito</button>
                             </form>
                         </div>
                     <% } else { %>

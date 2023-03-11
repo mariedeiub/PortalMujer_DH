@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             allowNull: false
         },
-        producto_id: {
+        producto_fk: {
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'usuario'
         })
         Carrito.belongsTo(models.Productos, {
-            foreignKey: 'producto_id',
+            foreignKey: 'producto_fk',
             as: 'producto'
         })
     }

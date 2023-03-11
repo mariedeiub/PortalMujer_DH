@@ -38,10 +38,10 @@
                             </div>
                         </section>
                         <section class="editar">
-                            <a href="/productos/producto/<%= producto.producto_id %>" >
+                            <a href="/productos/producto/<%= producto.producto_fk %>" >
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <form action="/carrito/eliminar/<%= producto.producto_id %>" method="POST" >
+                            <form action="/carrito/eliminar/<%= producto.producto_fk %>" method="POST" >
                                 <button class="boton-editar"><i class="fa-regular fa-trash-can"></i></button>
                             </form>
                             <h4>$<%= producto.precio-(producto.precio * producto.producto.descuento /100)  %> </h4>

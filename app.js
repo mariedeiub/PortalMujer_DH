@@ -7,8 +7,10 @@ const APIRouter= require ("./routes/APIRouter");
 const methodOverride =  require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
+const cors = require('cors')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 let PORT = 3030;
+
 
 //--------------------  APP LISTEN ------------------------//
 app.listen(PORT, () => console.log("Servidor corriendo en el puerto: " + PORT));
@@ -25,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookies());
 app.use(userLoggedMiddleware);
+app.use(cors())
 
 
 //--------------------  TEMPLATE ENGINE  ------------------------//

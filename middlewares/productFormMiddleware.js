@@ -1,4 +1,5 @@
-const {body} = require ('express-validator')
+const {body} = require ('express-validator');
+const path = require('path')
 
 const productFormMiddleware = [
     body('nombre')
@@ -14,19 +15,19 @@ const productFormMiddleware = [
     body('descripcion')
         .notEmpty().withMessage('Debe poner una descripcion')
         .isLength({min:20}).withMessage('La descripcion debe tener al menos 20 caracteres'),
-    // body('img').custom((value, {req}) =>{
-    //     let file = req.file;
-    //     let extensionesPermitidas = ['JPG', 'JPEG', 'PNG', 'GIF'];
-    //     console.log('ENTRA A VALIDACION DE ARCHIVO' + value)
-    //     if(file){
-    //         let fileExtension = path.extname(file.originalname)
-    //         console.log('EXTENSION:  ' + fileExtension);
-    //         if(!extensionesPermitidas.includes(fileExtension)){
-    //             throw new Error(`Las extensiones permitidas son ${extensionesPermitidas}.`)
-    //         }
-    //     }
-    //     return  true;
-    // })
+    body('img').custom((value, {req}) =>{
+        let file = req.files[0];
+        let extensionesPermitidas = ['.jpg', '.jpeg', '.png', '.gif'];
+        console.log('ENTRA A VALIDACION DE ARCHIVO' + value)
+        if(file){
+            let fileExtension = path.extname(file.originalname).toLowerCase()
+            console.log('EXTENSION:  ' + fileExtension);
+            if(!extensionesPermitidas.includes(fileExtension)){
+                throw new Error(`Las extensiones permitidas son ${extensionesPermitidas}.`)
+            }
+        }
+        return  true;
+    })
 ]
 
 module.exports = productFormMiddleware;

@@ -22,11 +22,19 @@
                     <button class="boton-personalizado">Editar</button>
                 </a>
             </div>
+            <% if (locals.isLogged && locals.userLogged.perfil_id == 1) { %>
+                <div>
+                    <a href="http://localhost:3000/">
+                        <button class="boton-personalizado">Dashboard</button>
+                    </a>
+                </div>
+            <% } %>
             <div>
                 <a href="/user/logout/">
                     <button class="boton-personalizado">Cerrar sesión</button>
                 </a>
             </div>
+           
         </div>
         <section class="detalle">
             <div>
