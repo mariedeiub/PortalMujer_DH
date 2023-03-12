@@ -70,7 +70,7 @@ window.addEventListener('load', function() {
             console.log(extension)
             errors.push('La imagen cargada tiene una extension invalida, las posibles extensiones son jpg, jpeg, png o gif');
         }
-
+ 
         //VALIDO SI HAY ERRORES EN EL FORMULARIO
         if (errors.length > 0) {
             evento.preventDefault();
